@@ -1,6 +1,7 @@
-import { QueryProvider } from '@rn-tools/utils/providers/query/QueryProvider'
 import { NativeBaseProvider } from 'native-base'
 import { PropsWithChildren } from 'react'
+
+import { QueryProvider } from '@rn-tools/utils/providers/query/QueryProvider'
 
 const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
