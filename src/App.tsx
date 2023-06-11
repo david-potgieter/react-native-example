@@ -1,12 +1,13 @@
 import { AppLayout } from '@rn-tools/components/layout/AppLayout'
-import { Box, NativeBaseProvider } from 'native-base'
+import { AppProviders } from '@rn-tools/utils/providers/AppProviders'
+import { Box } from 'native-base'
 
 export default function App(): JSX.Element {
   return (
-    <NativeBaseProvider>
+    <AppProviders>
       <AppLayout>
         <Box>Hello world</Box>
       </AppLayout>
-    </NativeBaseProvider>
+    </AppProviders>
   )
 }
