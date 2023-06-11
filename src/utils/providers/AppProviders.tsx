@@ -1,3 +1,4 @@
+import { QueryProvider } from '@rn-tools/utils/providers/query/QueryProvider'
 import { NativeBaseProvider } from 'native-base'
 import { PropsWithChildren } from 'react'
 
@@ -7,5 +8,9 @@ const inset = {
 }
 
 export function AppProviders({ children }: PropsWithChildren<{}>) {
-  return <NativeBaseProvider initialWindowMetrics={inset}>{children}</NativeBaseProvider>
+  return (
+    <NativeBaseProvider initialWindowMetrics={inset}>
+      <QueryProvider>{children}</QueryProvider>
+    </NativeBaseProvider>
+  )
 }
