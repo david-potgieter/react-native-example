@@ -1,0 +1,55 @@
+name: (PR) App Reporter Build & Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test-code:
+    name: Init, Lint and Test (PR)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install NPM Dependencies
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >>$GITHUB_OUTPUT
+        shell: bash
+
+      - name: Restore node_modules from cache
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        shell: bash
+
+      - name: Lint app
+        run: yarn lint
+        shell: bash
+
+      - name: Test and Coverage Report
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        id: coverage
+        with:
+          output: report-markdown
+          test-script: yarn cd:coverage
+          skip-step: install
+          package-manager: yarn
+
+      - name: Comment coverage report to PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: ${{ steps.coverage.outputs.report }}

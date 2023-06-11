@@ -17,9 +17,9 @@ module.exports = {
         ],
         root: ['./src'],
         alias: {
-          '@rn-tools': './src'
+          '@rn-tools': './src',
         },
       },
     ],
-  ]
-};
+  ],
+}
