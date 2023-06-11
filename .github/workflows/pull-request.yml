@@ -44,7 +44,7 @@ jobs:
         run: yarn test
         shell: bash
 
-      - name: Test and Coverage Report
+      - name: Coverage Report
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
