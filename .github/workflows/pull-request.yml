@@ -49,7 +49,7 @@ jobs:
         id: coverage
         with:
           output: report-markdown
-          test-script: yarn cd:coverage
+          test-script: yarn test
           skip-step: install
           package-manager: yarn
 
