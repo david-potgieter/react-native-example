@@ -14,7 +14,3 @@ export function getMockedData() {
       .catch(error => reject(error))
   })
 }
-
-// import('../../state/data/leader-board.json').then(json => {
-//   console.log('json', json)
-// })

@@ -19,14 +19,15 @@ export function FormEngine({ children }: FormEngineProps) {
     <FormProvider {...form}>
       <Box justifyContent="center" h="full">
         <VStack space="4">
-          <HStack space="2" bgColor="white" p="4" rounded="lg">
-            <Box w="3/5">
+          <HStack bgColor="white" px="4" py="3" rounded="lg" space="1">
+            <Box w="4/6">
               <BaseTextInput control={control} name="searchString" />
             </Box>
-            <Box w="2/5">
+            <Box w="2/6">
               <Button
-                disabled={!formState.isDirty}
                 h="12"
+                rounded="sm"
+                disabled={!formState.isDirty}
                 onPress={handleSubmit(onSubmit)}
                 variant={formState.isDirty ? 'solid' : 'subtle'}>
                 Search
