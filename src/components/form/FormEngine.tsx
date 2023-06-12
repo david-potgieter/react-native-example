@@ -12,7 +12,6 @@ export function FormEngine({ children }: FormEngineProps) {
   const { control, handleSubmit, formState } = form
 
   const onSubmit = (data: SearchFormValues) => {
-    console.log(data)
     setSearchString(data.searchString)
   }
 

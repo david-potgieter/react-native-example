@@ -6,10 +6,10 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 const baseConfig = {
   retry: 1,
   retryDelay: 1000 * 10,
-  refetchOnWindowFocus: false,
-  refetchOnMount: false,
-  staleTime: 1000 * 60 * 60, // 1 hour in milliseconds
-  cacheTime: Infinity,
+  refetchOnWindowFocus: true,
+  refetchOnMount: true,
+  // staleTime: 1000 * 60 * 60, // 1 hour in milliseconds
+  // cacheTime: Infinity,
 }
 
 const persister = createAsyncStoragePersister({ storage: AsyncStorage })
