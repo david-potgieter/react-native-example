@@ -44,7 +44,7 @@ jobs:
         shell: bash
 
       - name: Test app
-        run: yarn test
+        run: yarn test:coverage
         shell: bash
 
       - name: Coverage Report
