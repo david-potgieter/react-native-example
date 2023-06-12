@@ -44,18 +44,18 @@ jobs:
         shell: bash
 
       - name: Test app
-        run: yarn test
+        run: yarn test:coverage
         shell: bash
 
-      - name: Coverage Report
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        id: coverage
-        with:
-          github-token: ${{ github.token }}
-          output: report-markdown
-          test-script: yarn test:coverage
-          skip-step: install
-          package-manager: yarn
+      # - name: Coverage Report
+      #   uses: ArtiomTr/jest-coverage-report-action@v2
+      #   id: coverage
+      #   with:
+      #     github-token: ${{ github.token }}
+      #     output: report-markdown
+      #     test-script: yarn test:coverage
+      #     skip-step: install
+      #     package-manager: yarn
 
       - name: Comment coverage report to PR
         uses: marocchino/sticky-pull-request-comment@v2
