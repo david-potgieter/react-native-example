@@ -57,7 +57,7 @@ jobs:
       #     skip-step: install
       #     package-manager: yarn
 
-      - name: Comment coverage report to PR
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          message: ${{ steps.coverage.outputs.report }}
+      # - name: Comment coverage report to PR
+      #   uses: marocchino/sticky-pull-request-comment@v2
+      #   with:
+      #     message: ${{ steps.coverage.outputs.report }}

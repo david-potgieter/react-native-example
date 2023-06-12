@@ -8,8 +8,6 @@ const baseConfig = {
   retryDelay: 1000 * 10,
   refetchOnWindowFocus: true,
   refetchOnMount: true,
-  // staleTime: 1000 * 60 * 60, // 1 hour in milliseconds
-  // cacheTime: Infinity,
 }
 
 const persister = createAsyncStoragePersister({ storage: AsyncStorage })
