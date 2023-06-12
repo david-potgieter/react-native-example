@@ -4,9 +4,16 @@ import 'react-native'
 
 import App from '../src/App'
 
-it('renders correctly', async () => {
-  const comp = render(<App />)
-  await waitFor(() => {
-    expect(comp.getByText('Hello world')).toBeDefined()
+jest.mock('@fortawesome/react-native-fontawesome', () => ({
+  FontAwesomeIcon: '',
+}))
+
+describe('App Home', () => {
+  test('renders search button correctly', async () => {
+    const { getByText } = render(<App />)
+    await waitFor(() => {
+      const searchButton = getByText('Search')
+      expect(searchButton).toBeTruthy()
+    })
   })
 })
