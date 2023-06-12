@@ -10,7 +10,7 @@ export interface FormEngineProps extends PropsWithChildren {
 
 export interface PlayerInfo {
   bananas: number
-  lastDayPlayed: '2018-10-22'
+  lastDayPlayed: string
   longestStreak: number
   name: string
   rank?: number

@@ -8,10 +8,7 @@ export function compileTop10(data: PlayerInfo[], name?: string) {
   const top10 = array.slice(0, 10)
   const searchedIndex = findPlayerByName(array, name)
 
-  if (searchedIndex === -1) {
-    console.log('This user name does not exist! Please specify an existing user name!')
-    return []
-  }
+  if (searchedIndex === -1) return []
 
   if (top10.findIndex(item => item.name === name) === -1) {
     top10[9] = array[searchedIndex]

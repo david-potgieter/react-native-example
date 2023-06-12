@@ -1,8 +1,7 @@
 import { Box, HStack, Text } from 'native-base'
 
+import { PlayerPodium } from '@rn-tools/components/ui/PlayerPodium'
 import { PlayerProps } from '@rn-tools/types/app-types'
-
-import { PlayerPodium } from './PlayerPodium'
 
 export function PlayerItem({ player }: PlayerProps) {
   return (

@@ -6,6 +6,7 @@ const config: Config = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
+    '!src/__tests__/**/*.{ts,tsx}',
     '!src/**/*.d.ts',
     '!**/node_modules/**',
     '!**/vendor/**',

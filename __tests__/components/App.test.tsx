@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react-native'
 import React from 'react'
 import 'react-native'
 
-import App from '../src/App'
+import App from '../../src/App'
 
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: '',
