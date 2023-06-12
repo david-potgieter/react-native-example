@@ -6,5 +6,6 @@
       "@rn-tools/*": ["src/*"]
     }
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["node_modules", "__mocks__"]
 }

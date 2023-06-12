@@ -4,11 +4,14 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   test-code:
     name: Init, Lint and Test (PR)
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -40,12 +43,17 @@ jobs:
         run: yarn lint
         shell: bash
 
-      - name: Test and Coverage Report
+      - name: Test app
+        run: yarn test
+        shell: bash
+
+      - name: Coverage Report
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
+          github-token: ${{ github.token }}
           output: report-markdown
-          test-script: yarn cd:coverage
+          test-script: yarn test
           skip-step: install
           package-manager: yarn
 

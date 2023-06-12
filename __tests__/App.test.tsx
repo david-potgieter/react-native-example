@@ -1,10 +1,12 @@
+import { render, waitFor } from '@testing-library/react-native'
 import React from 'react'
-
-import App from '@rn-tools/App'
-import { render } from '@testing-library/react-native'
 import 'react-native'
 
-it('renders correctly', () => {
+import App from '../src/App'
+
+it('renders correctly', async () => {
   const comp = render(<App />)
-  expect(comp.getByText('Hello world')).toBeDefined()
+  await waitFor(() => {
+    expect(comp.getByText('Hello world')).toBeDefined()
+  })
 })
