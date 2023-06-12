@@ -1,4 +1,4 @@
-name: (PR) App Reporter Build & Test
+name: (PR) App Build & Test Report
 
 on:
   workflow_dispatch:
