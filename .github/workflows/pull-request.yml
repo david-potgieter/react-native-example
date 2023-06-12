@@ -53,7 +53,7 @@ jobs:
         with:
           github-token: ${{ github.token }}
           output: report-markdown
-          test-script: yarn test
+          test-script: yarn test:coverage
           skip-step: install
           package-manager: yarn
 
