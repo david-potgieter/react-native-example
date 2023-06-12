@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 
 export function AppLayout({ children }: PropsWithChildren<{}>) {
   return (
-    <Center safeArea bg="muted.100" h="full">
+    <Center safeArea bg="blueGray.300" h="full" p="6">
       {children}
     </Center>
   )
