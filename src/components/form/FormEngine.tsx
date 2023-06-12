@@ -1,69 +1,42 @@
-import { Box, Button, HStack, Input, Spinner, VStack, useTheme } from 'native-base'
-import { useEffect, useState } from 'react'
-import { Controller, UseControllerProps, useForm } from 'react-hook-form'
+import { useAtom } from 'jotai'
+import { Box, Button, HStack, VStack } from 'native-base'
+import { FormProvider, useForm } from 'react-hook-form'
 
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { BaseTextInput } from '@rn-tools/components/form/input/BaseTextInput'
+import { searchStringAtom } from '@rn-tools/state/atoms/search-atoms'
 import { FormEngineProps, SearchFormValues } from '@rn-tools/types/app-types'
 
-export function BaseTextInput(props: UseControllerProps<SearchFormValues>) {
-  const { colors } = useTheme()
+export function FormEngine({ children }: FormEngineProps) {
+  const [searchString, setSearchString] = useAtom(searchStringAtom)
+  const form = useForm({ defaultValues: { searchString: '' } })
+  const { control, handleSubmit, formState } = form
+
+  const onSubmit = (data: SearchFormValues) => {
+    console.log(data)
+    setSearchString(data.searchString)
+  }
+
   return (
-    <Controller
-      control={props.control}
-      rules={{ required: true }}
-      render={({ field: { onChange, onBlur, value } }) => (
-        <Input
-          placeholder="Search for a user name..."
-          onBlur={onBlur}
-          onChangeText={onChange}
-          value={value}
-          InputLeftElement={
-            <Box pl="2">
-              <FontAwesomeIcon icon={faMagnifyingGlass} color={colors.blueGray[600]} />
+    <FormProvider {...form}>
+      <Box justifyContent="center" h="full">
+        <VStack space="4">
+          <HStack space="2" bgColor="white" p="4" rounded="lg">
+            <Box w="3/5">
+              <BaseTextInput control={control} name="searchString" />
             </Box>
-          }
-          h="12"
-          bgColor="info.100"
-          color="info.900"
-        />
-      )}
-      name={props.name}
-    />
-  )
-}
-
-export function FormEngine({ isLoading, children }: FormEngineProps) {
-  const [isFocused, setIsFocused] = useState(false)
-  const { control, handleSubmit, formState } = useForm({
-    defaultValues: { searchString: '' },
-  })
-
-  const onSubmit = (data: SearchFormValues) => console.log(data)
-
-  useEffect(() => {
-    setIsFocused(formState.isDirty)
-  }, [formState.isDirty])
-
-  return (
-    <Box justifyContent={isFocused ? 'flex-start' : 'center'} h="full">
-      <VStack space="4">
-        <HStack space="2" bgColor="white" p="4" rounded="lg">
-          <Box w="3/5">
-            <BaseTextInput control={control} name="searchString" />
-          </Box>
-          <Box w="2/5">
-            <Button
-              disabled={!formState.isDirty || isLoading}
-              h="12"
-              onPress={handleSubmit(onSubmit)}
-              variant={formState.isDirty ? 'solid' : 'subtle'}>
-              {isLoading ? <Spinner /> : 'Search'}
-            </Button>
-          </Box>
-        </HStack>
-        {isFocused ? <Box>{children}</Box> : null}
-      </VStack>
-    </Box>
+            <Box w="2/5">
+              <Button
+                disabled={!formState.isDirty}
+                h="12"
+                onPress={handleSubmit(onSubmit)}
+                variant={formState.isDirty ? 'solid' : 'subtle'}>
+                Search
+              </Button>
+            </Box>
+          </HStack>
+          {searchString ? <Box>{children}</Box> : null}
+        </VStack>
+      </Box>
+    </FormProvider>
   )
 }

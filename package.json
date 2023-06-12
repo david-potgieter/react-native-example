@@ -8,6 +8,7 @@
     "lint": "eslint . --fix --max-warnings=0",
     "start": "react-native start",
     "test": "jest",
+    "test:cd": "jest:coverage",
     "pods": "cd ios && pod install && cd ..",
     "prepare": "husky install"
   },
@@ -19,7 +20,9 @@
     "@tanstack/query-async-storage-persister": "^4.29.11",
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-query-persist-client": "^4.29.12",
+    "axios": "^1.4.0",
     "eslint-plugin-import": "^2.27.5",
+    "jotai": "^2.1.1",
     "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-hook-form": "^7.44.3",

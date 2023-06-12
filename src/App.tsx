@@ -7,7 +7,7 @@ export default function App(): JSX.Element {
   return (
     <AppProviders>
       <AppLayout>
-        <FormEngine isLoading={false}>
+        <FormEngine>
           <LeaderBoard />
         </FormEngine>
       </AppLayout>
