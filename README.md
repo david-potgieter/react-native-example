@@ -10,9 +10,9 @@ Before you start, make sure you have Node.js and Yarn installed. If you don't ha
 
 First, you will need to clone the repository to your local machine. Open a terminal window and navigate to the directory where you want the project to live, then run the following command:
 
-\```bash
+```bash
 git clone https://github.com/david-potgieter/react-native-example.git
-\```
+```
 
 This will create a new directory named `react-native-example` with all the code of the project.
 
@@ -20,31 +20,31 @@ This will create a new directory named `react-native-example` with all the code 
 
 Navigate into the project directory:
 
-\```bash
+```bash
 cd react-native-example
-\```
+```
 
 Install the project dependencies with Yarn:
 
-\```bash
+```bash
 yarn install
-\```
+```
 
 ### Running the App
 
 Now you can run the app on your local machine.
 
-\```bash
+```bash
 yarn start
-\```
+```
 
 ### Running Tests
 
 The project uses Jest for testing. To run the tests, use the following command:
 
-\```bash
+```bash
 yarn test
-\```
+```
 
 You should see output showing the results of the tests.
 
