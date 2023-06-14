@@ -9,6 +9,8 @@ export function LeaderBoard() {
 
   if (isError) return <Text>Error</Text>
 
+  // console.log(JSON.stringify({ isLoading, s: data?.length }, null, 2))
+
   return (
     <Box bgColor="white" p="6" rounded="lg">
       {isLoading ? <Text>Loading...</Text> : null}

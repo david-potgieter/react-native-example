@@ -5,6 +5,9 @@ import { PlayerPodiumProps } from '@rn-tools/types/app-types'
 export function PlayerPodium({ rank, isSearchedUser }: PlayerPodiumProps) {
   let bgColor
   switch (true) {
+    case isSearchedUser:
+      bgColor = 'info.200'
+      break
     case rank === 1:
       bgColor = 'yellow.300'
       break
@@ -13,9 +16,6 @@ export function PlayerPodium({ rank, isSearchedUser }: PlayerPodiumProps) {
       break
     case rank === 3:
       bgColor = 'warning.200'
-      break
-    case isSearchedUser:
-      bgColor = 'info.200'
       break
     default:
       bgColor = 'muted.100'

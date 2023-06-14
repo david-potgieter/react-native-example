@@ -15,6 +15,6 @@ export function useLeaderBoard() {
       const top10 = compileTop10(data, searchString)
       return top10
     },
-    enabled: Boolean(searchString),
+    enabled: Boolean(searchString && searchString?.length > 0),
   })
 }
