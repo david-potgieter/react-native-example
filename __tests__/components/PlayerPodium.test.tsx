@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react-native'
 import React from 'react'
 import { PlayerPodium } from '../../src/components/ui/PlayerPodium'
+import { TestProvidersWrapper } from '../../src/providers/test/TestProviders'
 import { PlayerPodiumProps } from '../../src/types/app-types'
-import { TestProvidersWrapper } from '../../src/utils/providers/test/TestProviders'
 
 describe('PlayerPodium', () => {
   const TestWrapper = (props: PlayerPodiumProps) => {

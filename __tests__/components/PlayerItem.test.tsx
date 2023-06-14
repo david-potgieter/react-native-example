@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react-native'
 import React from 'react'
 import { PlayerItem } from '../../src/components/ui/PlayerItem'
+import { TestProvidersWrapper } from '../../src/providers/test/TestProviders'
 import { PlayerProps } from '../../src/types/app-types'
-import { TestProvidersWrapper } from '../../src/utils/providers/test/TestProviders'
 
 describe('PlayerItem', () => {
   const TestWrapper = ({ player }: PlayerProps) => {

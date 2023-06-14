@@ -3,7 +3,7 @@ import { useResetAtom } from 'jotai/utils'
 import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { BaseTextInput } from '../../src/components/form/input/BaseTextInput'
-import { TestProvidersWrapper } from '../../src/utils/providers/test/TestProviders'
+import { TestProvidersWrapper } from '../../src/providers/test/TestProviders'
 
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: '',
