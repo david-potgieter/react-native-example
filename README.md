@@ -50,6 +50,16 @@ You should see output showing the results of the tests.
 
 Congratulations! You've set up the React Native project on your local machine and ran the tests. Explore the project and happy coding!
 
+## Tools Used
+
+- [**Jotai:**](https://jotai.org/) A minimalist state management library for React. It is used in this project to manage global state.
+
+- [**@tanstack/react-query:**](https://tanstack.com/query/latest/) A powerful data synchronization library for React that ensures data remains up-to-date and synchronized. One of the key features used in this project is the persist client, which allows data to be persisted offline with minimal effort, enabling offline-first experiences.
+
+- [**React Hook Form:**](https://www.react-hook-form.com/) A lightweight and efficient form management library for React. It is used in this project for managing form states and validation.
+
+- [**Native Base:**](https://nativebase.io/) A popular UI component library for React Native which provides a set of ready-to-use UI components, allowing developers to focus on business logic rather than low-level component management.
+
 ## Screenshots & Demo
 
 | Android | iOS |
