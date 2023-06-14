@@ -50,4 +50,22 @@ You should see output showing the results of the tests.
 
 Congratulations! You've set up the React Native project on your local machine and ran the tests. Explore the project and happy coding!
 
+## Screenshots & Demo
+
+| Android | iOS |
+| ----- | ---- |
+| <img src="https://github.com/david-potgieter/react-native-example/assets/2729962/d913e0fe-9984-483e-821d-2379dc9fd226" width="200" />  | <img src="https://github.com/david-potgieter/react-native-example/assets/2729962/29b925ee-442e-49fc-b346-e5e932e2209c" width="200" /> |
+
+| iOS |
+| ---- |
+| https://github.com/david-potgieter/react-native-example/assets/2729962/bca862b9-cdd0-49c6-8604-1ee6d5022b68 |
+
+
+
+
+
+
+
+
+
 ---
